@@ -16,12 +16,17 @@ jobs:
         with:
           flutter-version: 3.27.4
           channel: stable
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: aarch64-linux-android,armv7-linux-androideabi
+          cache: true
+      - name: Install Rust
+        run: |
+          rustup toolchain install 1.83.0
+          rustup default 1.83.0
+          rustup target add aarch64-linux-android armv7-linux-androideabi x86_64-linux-android i686-linux-android
+      - run: echo "ANDROID_NDK_ROOT=$ANDROID_NDK_LATEST_HOME" >> $GITHUB_ENV
       - run: flutter pub get
       - run: flutter build apk --debug --target-platform android-arm,android-arm64
       - uses: actions/upload-artifact@v4
         with:
-          name: Wormhole-APK
+          name: Wormhole-LiveAudio-APK
           path: build/app/outputs/flutter-apk/app-debug.apk
+          retention-days: 14
