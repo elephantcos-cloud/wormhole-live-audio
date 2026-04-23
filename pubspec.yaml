@@ -41,6 +41,8 @@ dependencies:
   slang_flutter: ^4.5.0
   uri_content: ^3.0.0
   vibration: ^3.1.3
+  network_info_plus: ^6.0.0
+  network_info_plus: ^6.0.0
 dev_dependencies:
   build_runner: ^2.4.15
   flutter_lints: ^5.0.0
@@ -50,4 +52,3 @@ flutter:
   uses-material-design: true
   assets:
     - assets/illustrations/
-  network_info_plus: ^6.0.0
