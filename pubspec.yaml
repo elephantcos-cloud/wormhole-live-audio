@@ -17,6 +17,7 @@ dependencies:
   flutter_colorpicker: ^1.1.0
   flutter_displaymode: ^0.6.0
   flutter_localizations:
+    sdk: flutter
   flutter_localized_locales: ^2.0.5
   flutter_rust_bridge: 2.8.0
   flutter_svg: ^2.0.17
